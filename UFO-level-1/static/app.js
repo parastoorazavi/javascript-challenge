@@ -1,5 +1,15 @@
 function tabulate(data, columns) {
-	var tbody = d3.select('body').append('tbody');
+	var table = d3.select('body').append('table')
+	var thead = table.append('thead')
+	var	tbody = table.append('tbody');
+
+	// append the header row
+	thead.append('tr')
+	  .selectAll('th')
+	  .data(columns).enter()
+	  .append('th')
+	    .text(function (column) { return column; });
+
 
 	// create a row for each object in the data
 	var rows = tbody.selectAll('tr')
@@ -22,10 +32,4 @@ function tabulate(data, columns) {
 }
 
 // render the tables
-tabulate(data, ['datetime', 'city', 'state', 'country', 'shape', 'comments']); // 2 column table
-tabulate(data, ['datetime']); // table with only date column
-tabulate(data, ['city']); // table with only close column
-tabulate(data, ['state']); // table with only date column
-tabulate(data, ['country']); // table with only date column
-tabulate(data, ['shape']); // table with only date column
-tabulate(data, ['comments']); // table with only date column
+tabulate(data, ['datetime', 'city', 'state', 'country', 'shape', 'durationMinutes', 'comments']); // 2 column table
