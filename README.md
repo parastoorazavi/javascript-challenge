@@ -1,41 +1,34 @@
 # javascript-challenge
-# sql-challenge
 
 
 ## 📝 Table of Contents
 
 - [About](#about)
-- [Getting Started](#getting_started)
-- [Bonus Part](#bonus_part)
+- [Level 1: Automatic Table and Date Search](#level_one)
+- [Level 2: Multiple Search Categories](#level_two)
 
 ## 🧐 About <a name = "about"></a>
-There are some data of the company "Pewlett Hackard". They are going to work on a project which doing some research on employees of the corporation from the 1980s and 1990s.All that remain of the database of employees from that period are six CSV files. For this project we are donig:
-1.	Data Modeling
-2.	Data Engineering
-3.	Data Analysis
+WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and we here at ALIENS-R-REAL have collected all of the eye-witness reports we could to prove it! All we need to do now is put this information online for the world to see and then the matter will finally be put to rest.
+There is just one tiny problem though... our collection is too large to search through manually. Even our most dedicated followers are complaining that they are having trouble locating specific reports in this mess.
+That's why we are hiring you. We need you to write code that will create a table dynamically based upon a dataset we provide. We also need to allow our users to filter the table data for specific values. There's a catch though... we only use pure JavaScript, HTML, and CSS, and D3.js on our web pages. They are the only coding languages which can be trusted.
+You can handle this... right? The planet Earth needs to know what we have found!
 
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 🏁 Level 1: Automatic Table and Date Search <a name = "level_one"></a>
 
-**Data Modeling:** <br>
-Inspect the CSVs and sketch out an ERD of the tables. 
+•	Create a basic HTML web page or use the index.html file provided (we recommend building your own custom page!).
+•	Using the UFO dataset provided in the form of an array of JavaScript objects, write code that appends a table to your web page and then adds new rows of data for each UFO sighting. 
+•	Make sure you have a column for date/time, city, state, country, shape, and comment at the very least.
+•	Use a date form in your HTML document and write JavaScript code that will listen for events and search through the date/time column to find rows that match user input. 
 
-**Data Engineering:** <br>
-•	Use the information to create a table schema for each of the six CSV files. 
-•	Import each CSV file into the corresponding SQL table. 
 
-**Data Analysis:** <br>
-1.	List the following details of each employee: employee number, last name, first name, sex, and salary.
-2.	List first name, last name, and hire date for employees who were hired in 1986.
-3.	List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
-4.	List the department of each employee with the following information: employee number, last name, first name, and department name.
-5.	List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
-6.	List all employees in the Sales department, including their employee number, last name, first name, and department name.
-7.	List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
-8.	In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+## Level 2: Multiple Search Categories <a name = "level_two"></a>
 
-## :doughnut:Bonus Part -	Import the SQL database into Pandas. <a name = "bonus_part"></a>
-
-1.	Create a histogram to visualize the most common salary ranges for employees.
-2.	Create a bar chart of average salary by title.
+•	Complete all of Level 1 criteria.
+•	Using multiple input tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters and search for UFO sightings using the following criteria based on the table columns:
+1. date/time
+2. city
+3. state
+4. country
+5. shape
 
