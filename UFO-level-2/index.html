@@ -32,12 +32,21 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
+                <div class="control-styles">
+                  <select id="box"> 
+                  <option value="date/time">Date</option>
+                  <option value="city">City</option>
+                  <option value="state">State</option>
+                  <option value="country">Country</option>
+                  <option value="shape">Shape</option>
+              </select>
+              </div>
                 <form>
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <label for="date">Enter Your Data</label>
+                        <input class="form-control" id="datetime" type="text" value="">
                       </li>
                     </ul>
                   </div>
@@ -72,8 +81,8 @@
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script src="static/data.js"></script>
-  <script src="static/app.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
 </body>
 
 </html>
