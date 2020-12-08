@@ -1,40 +1,49 @@
 // from data.js
 var tableData = data;
 
+// Get a reference to the table body
+var	tbody = d3.select('tbody');
+
+// Loop Through `data` report object
+data.forEach(report => {
+	// Use d3 to append one table row `tr` for each report object
+	var row = tbody.append("tr");
+	// Use `Object.entries` for each report value
+	Object.entries(report).forEach(([key, value])=>{
+	// Use d3 to append 1 cell per report value (date, city, state, country, shape, duration and comments)
+	var cell = row.append("td");
+	cell.text(value);
+	});
+});
 
 
-function tabulate(data, columns) {
-	var table = d3.select('body').append('table')
-	var thead = table.append('thead')
-	var	tbody = table.append('tbody');
+// Select the button
+var button = d3.select("#filter-btn");
 
-	// append the header row
-	thead.append('tr')
-	  .selectAll('th')
-	  .data(columns).enter()
-	  .append('th')
-	    .text(function (column) { return column; });
+// Create event handlers 
+button.on("click", runEnter);
+
+// Complete the event handler function for the form
+function runEnter() {
+
+// Select the input element and get the raw HTML node
+var inputElement = d3.select("#datetime");
+
+// Get the value property of the input element
+var inputValue = inputElement.property("value");
+tbody.html("");
+
+// using filter to create aa new table by new input date
+var filteredData = tableData.filter(data => data.datetime === inputValue);
+filteredData.forEach(filDt => {
+	var row = tbody.append("tr");
+	Object.entries(filDt).forEach(([key, value])=>{
+		var cell = row.append("td");
+		cell.text(value);
+	});
+  });
+};
 
 
-	// create a row for each object in the data
-	var rows = tbody.selectAll('tr')
-	  .data(data)
-	  .enter()
-	  .append('tr');
 
-	// create a cell in each row for each column
-	var cells = rows.selectAll('td')
-	  .data(function (row) {
-	    return columns.map(function (column) {
-	      return {column: column, value: row[column]};
-	    });
-	  })
-	  .enter()
-	  .append('td')
-	    .text(function (d) { return d.value; });
 
-  return table;
-}
-
-// render the tables
-tabulate(data, ['datetime', 'city', 'state', 'country', 'shape', 'durationMinutes', 'comments']); // 2 column table
