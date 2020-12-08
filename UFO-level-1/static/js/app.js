@@ -1,3 +1,8 @@
+// from data.js
+var tableData = data;
+
+
+
 function tabulate(data, columns) {
 	var table = d3.select('body').append('table')
 	var thead = table.append('thead')
