@@ -35,7 +35,7 @@ tbody.html("");
 
 // using filter to create aa new table by new input date
 var filteredData = tableData.filter(data => data.datetime === inputValue);
-filteredData.forEach(filDt => {
+filteredData.forEach((filDt) => {
 	var row = tbody.append("tr");
 	Object.entries(filDt).forEach(([key, value])=>{
 		var cell = row.append("td");
